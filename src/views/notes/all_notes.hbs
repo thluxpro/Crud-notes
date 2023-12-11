@@ -1,0 +1,22 @@
+<div class="row">
+    {{!-- Handlebaaaars --}}
+    {{#each notes}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center"> 
+                        {{titulo}} <a href="/notes/edit/{{_id}}"><i class='bx bx-edit-alt'></i> </a>
+
+                    </h4>
+                    <p>{{descripcion}} </p>
+                    <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST"> 
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger btn-block brn-sm"> 
+                            Borrar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
